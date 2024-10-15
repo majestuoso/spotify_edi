@@ -4,6 +4,7 @@ import { music } from './music.model';
 @Injectable()
 export class MusicService {
     
+    
 
     musicList = []
 
@@ -21,8 +22,13 @@ export class MusicService {
     }
 
     getMusicById ( id:number ) {
-        return this.musicList.find( u => u.id === id );
+        return this.musicList.find( m => m.id === id );
     }
+
+    getMusicByName (name: string) { 
+        return this.musicList.find( m => m.nombre === name);
+
+    }  
 
     postMusic( newmusic : music ): string {
         this.musicList.push( newmusic );

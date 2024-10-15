@@ -16,6 +16,11 @@ export class MusicController {
         return this.service.getMusicById( Number( id ) );
     }
     
+    @Get('/name/:name')
+    getmusicByName( @Param('name') name:string ) {
+        return this.service.getMusicByName( name );
+    }
+    
     @Post() 
     postmusic (@Body() newmusic : music) {
         return this.service.postMusic( newmusic );
