@@ -20,7 +20,10 @@ export class MusicController {
     getmusicByName( @Param('name') name:string ) {
         return this.service.getMusicByName( name );
     }
-    
+    @Get('/artist/:artista')
+    getmusicByArtista( @Param('artista') artista:string ) {
+        return this.service.getMusicByArtista( artista );
+    }
     @Post() 
     postmusic (@Body() newmusic : music) {
         return this.service.postMusic( newmusic );
@@ -36,3 +39,5 @@ export class MusicController {
         return this.service.deleteMusic( Number(id) );
     }
 }
+    
+

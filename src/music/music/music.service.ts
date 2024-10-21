@@ -30,6 +30,9 @@ export class MusicService {
 
     }  
 
+    getMusicByArtista (artista: string) { 
+        return this.musicList.find( m => m.artista === artista);
+    }
     postMusic( newmusic : music ): string {
         this.musicList.push( newmusic );
         return newmusic.nombre;
